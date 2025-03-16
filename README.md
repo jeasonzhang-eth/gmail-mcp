@@ -1,4 +1,5 @@
 # Gmail MCP
+[中文文档](README_cn.md)
 
 A server for accessing Gmail inbox using the Multimodal Communication Protocol (MCP).
 
