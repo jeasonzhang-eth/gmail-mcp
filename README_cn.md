@@ -24,7 +24,7 @@ Gmail MCP是一个基于Python的服务器，通过MCP协议提供对Gmail收件
 
 1. 克隆此仓库：
    ```
-   git clone https://github.com/yourusername/gmail-mcp.git
+   git clone https://github.com/jeasonzhang-eth/gmail-mcp.git
    cd gmail-mcp
    ```
 
@@ -77,6 +77,28 @@ python main.py --test
 服务器提供以下MCP工具：
 
 - `get_gmail_content(limit: int)`：获取指定数量限制的Gmail会话，并以JSON字符串形式返回，包含会话信息和消息内容。
+
+### 添加到MCP客户端
+#### Claude:
+```json
+{
+  "mcpServers": {
+    "gmail-mcp": {
+      "command": "/Users/xxx/.local/bin/uv", // path to your uv
+      "args": [
+        "--directory",
+        "/path-of-this-project/gmail-mcp", // path of this project
+        "run",
+        "main.py"      
+      ]
+    }
+  }
+}
+```
+#### cursor
+```
+/Users/xxx/.local/bin/uv --directory /path-of-this-project/gmail-mcp run main.py
+```
 
 ## 项目结构
 

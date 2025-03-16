@@ -24,7 +24,7 @@ Gmail MCP is a Python-based server that provides access to your Gmail inbox thro
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/gmail-mcp.git
+   git clone https://github.com/jeasonzhang-eth/gmail-mcp.git
    cd gmail-mcp
    ```
 
@@ -77,6 +77,28 @@ This will fetch and display a few recent email threads to verify that everything
 The server exposes the following MCP tool:
 
 - `get_gmail_content(limit: int)`: Fetches Gmail threads up to the specified limit and returns them as a JSON string containing thread information and messages.
+
+### Add to MCP Client
+#### Claude:
+```json
+{
+  "mcpServers": {
+    "gmail-mcp": {
+      "command": "/Users/xxx/.local/bin/uv", // path to your uv
+      "args": [
+        "--directory",
+        "/path-of-this-project/gmail-mcp", // path of this project
+        "run",
+        "main.py"      
+      ]
+    }
+  }
+}
+```
+#### cursor
+```
+/Users/xxx/.local/bin/uv --directory /path-of-this-project/gmail-mcp run main.py
+```
 
 ## Project Structure
 
